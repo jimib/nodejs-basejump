@@ -8,7 +8,6 @@ module.exports = function(app){
 	
 	return{
 		index : [checkLoggedIn, function(req, res, next){
-			
 			res.render(viewsDir + "index");
 		}]
 	}
