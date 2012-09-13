@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "3.0.0rc4",
+	"connect-flash" : "latest",
     "jade": "*",
 	"chauffeur" : "git://github.com/jimib/nodejs-chauffeur.git#master",
 	"earlybird" : "git://github.com/jimib/nodejs-earlybird.git#master",

@@ -6,9 +6,9 @@ module.exports = function(app){
 	app.routes = chauffeur(app, function(map){
 		map.get("/", app.controllers.home.index, "index");
 		//namespace
-		map.resource("blog", app.controllers.blog, function(map){
-			
-		});
+		map.get("/login", app.controllers.login.loginGET, "loginGET");
+		map.post("/login", app.controllers.login.loginPOST, "loginPOST");
+		map.get("/logout", app.controllers.login.logout, "logout");
 	});
 	
 	console.log(util.inspect(app.routes));

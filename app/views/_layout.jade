@@ -1,0 +1,12 @@
+html
+	head
+		block head
+	body
+		- msg = flash();
+		if(msg)
+			if(msg.error)
+				p.error= msg.error
+			if(msg.info)
+				p.info= msg.info
+		h1 Title
+		block body
