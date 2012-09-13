@@ -3,4 +3,12 @@ extends ../_layout
 block head
 
 block body
-	p Hello World
+	h1 Login
+	- username = locals.username || "";
+	- password = locals.password || "";
+	- form = html.createForm("login", routes.loginPOST, "POST");
+	!= form.open()
+		!= form.input("username",username)
+		!= form.input("password",password,{type:'password'})
+		!= form.submit("Submit")
+	!= form.close()

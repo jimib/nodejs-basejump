@@ -3,10 +3,20 @@ html
 		block head
 	body
 		- msg = flash();
+		
+		ul
+			if(isLoggedIn())
+				li!= html.createLink(routes.logout, "logout");
+			else
+				li!= html.createLink(routes.login, "login");
+			li!=  html.createLink(routes.home, "home");
+			li!=  html.createLink(routes.private.index, "private");
+			
 		if(msg)
 			if(msg.error)
 				p.error= msg.error
 			if(msg.info)
 				p.info= msg.info
-		h1 Title
+		
+		
 		block body
