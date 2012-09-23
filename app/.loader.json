@@ -1,4 +1,0 @@
-{
-	"include" : ["middleware", "models", "controllers", "libs", "init"]
-	,"exclude" : ["public","views"]
-}
