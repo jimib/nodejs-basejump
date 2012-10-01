@@ -15,6 +15,4 @@ module.exports = function(app){
 			map.get("", app.controllers.private.index, "index");
 		});
 	});
-	
-	console.log(util.inspect(app.routes));
 }
