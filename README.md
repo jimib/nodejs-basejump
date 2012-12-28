@@ -30,3 +30,11 @@ app
 	- public [ignored]
 
 The npm package includes express, connect-flash and jade; these are all completely optional however and this should be flexible enough to adapt to any particular style of development.
+
+Third Party Libraries:
+
+It's become my habit to use Bootstrap, JQuery and Knockout in all my projects. Being as it's a pain to keep downloading and adding these to each project I've included them into my basejump project so it's part of a project from the start.
+
+JQuery: http://jquery.com
+KnockoutJs: http://knockoutjs.com
+Bootstrap: http://twitter.github.com/bootstrap
