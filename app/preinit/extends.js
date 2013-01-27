@@ -22,4 +22,24 @@ module.exports = function(app){
 			}
 		}
 	}
+	
+	
+	//ADD A MERGE PROPERTY TO OBJECT
+	Object.defineProperty(Object.prototype, "merge", {
+	    enumerable: false,
+	    value: function(from, boolOverride) {
+			if(boolOverride == undefined){
+				boolOverride = false;
+			}
+			
+	        var props = Object.getOwnPropertyNames(from);
+	        var dest = this;
+	        props.forEach(function(name) {
+	            if (boolOverride || !(name in dest)) {
+	            	dest[name] = from[name];
+	            }
+	        });
+	        return this;
+	    }
+	});
 }
