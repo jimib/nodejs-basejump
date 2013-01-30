@@ -18,7 +18,8 @@ module.exports = function(app){
 			res.sendOrRender = function(data, view){
 				if(view && requestAcceptsHtml()){
 					//send the data as html
-					res.locals.data = data;
+					res.locals = res.locals || {};
+					Object.merge(res.locals, data);
 					res.render(view);
 				}else{
 					//send the data as json

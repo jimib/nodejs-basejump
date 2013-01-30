@@ -4,8 +4,8 @@ module.exports = function(app){
 		return this.toString().replace(regexp, value);
 	}
 	
-	Array.prototype.forEachAsync = function(action, cb){
-		var self = this;
+	Array.forEachAsync = function(arr, action, cb){
+		var self = arr;
 		var i = - 1;
 		var lim = this.length;
 
@@ -14,7 +14,7 @@ module.exports = function(app){
 		function next(){
 			if(++i < lim){
 				action(self[i], function(err, result){
-					self[i] = result || self[i];
+					//self[i] = result || self[i];//? - WHAT IS THIS LINE DOING - NO IDEA COMMENTED OUT
 					next();
 				});
 			}else{
@@ -23,23 +23,16 @@ module.exports = function(app){
 		}
 	}
 	
-	
-	//ADD A MERGE PROPERTY TO OBJECT
-	Object.defineProperty(Object.prototype, "merge", {
-	    enumerable: false,
-	    value: function(from, boolOverride) {
-			if(boolOverride == undefined){
-				boolOverride = false;
+	Object.merge = function(a, b, boolOverride){
+		if(boolOverride == undefined){
+			boolOverride = false;
+		}
+		
+		for(var i in b){
+			if(boolOverride || a[i] == undefined)
+			{
+				a[i] = b[i];
 			}
-			
-	        var props = Object.getOwnPropertyNames(from);
-	        var dest = this;
-	        props.forEach(function(name) {
-	            if (boolOverride || !(name in dest)) {
-	            	dest[name] = from[name];
-	            }
-	        });
-	        return this;
-	    }
-	});
+		}
+	}
 }
