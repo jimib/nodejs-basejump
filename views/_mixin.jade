@@ -1,12 +1,3 @@
-mixin addLogin()
-	ul
-		if(isLoggedIn())
-			li!= html.createLink(routes.logout, "logout");
-		else
-			li!= html.createLink(routes.login, "login");
-		li!=  html.createLink(routes.home, "home");
-		li!=  html.createLink(routes.private.index, "private");
-	
 mixin addFlashMessage()
 	- msg = flash();
 	if(msg)

@@ -11,6 +11,6 @@
     "jade": "*",
 	"chauffeur" : "git://github.com/jimib/nodejs-chauffeur.git#master",
 	"earlybird" : "git://github.com/jimib/nodejs-earlybird.git#master",
-	"flatpack" : "git://github.com/jimib/nodejs-flatpack.git#master"
+	"uberclass" : "1.0.1"
   }
 }

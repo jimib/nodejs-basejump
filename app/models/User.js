@@ -1,4 +1,4 @@
-module.exports = function(app){
+module.exports = function(app, cb){
 	var schema = app.schema;
 	
 	if(schema){
