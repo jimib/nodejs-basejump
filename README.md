@@ -18,7 +18,7 @@ Within each directory a developer can add '.earlybird.conf' to control how modul
 <pre>
 {
 	"include" : ["preinit", "models", "controllers", "init"]
-	,"exclude" : ["public","views"]
+	,"exclude" : ["ignoredDir"]
 }
 </pre>
 
@@ -30,8 +30,7 @@ app
 	- models [2nd]
 	- controllers [3rd]
 	- init [4th]
-	- views [ignored]
-	- public [ignored]
+	- ignoredDir [ignored]
 </pre>
 
 The npm package includes express, connect-flash and jade; these are all completely optional however and this should be flexible enough to adapt to any particular style of development.
