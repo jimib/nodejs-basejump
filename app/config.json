@@ -1,3 +1,9 @@
 {
-	"port" : 3000
+	"port" : 3000,
+	"mongo":{
+		"host":"localhost",
+		"username":"USERNAME",
+		"password":"PASSWORD",
+		"database":"db-dev"
+	}
 }

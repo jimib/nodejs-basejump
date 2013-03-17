@@ -1,5 +1,5 @@
 module.exports = function(app){
-	String.prototype.injectParam = function(str, param, value){
+	String.injectParam = function(str, param, value){
 		var regexp = new RegExp(":"+param, "g");
 		return str.toString().replace(regexp, value);
 	}
@@ -102,6 +102,21 @@ module.exports = function(app){
 	
 	var Class = require("uberclass");
 	var events = require("events");
+	
+	Class.util = {
+		ExposeMethods : function(methods, target){
+			var result = {};
+
+			methods.forEach(function(method){
+				//link the methods
+				result[method] = function(){
+					target[method].apply(target, arguments);
+				}
+			});
+			
+			return result;
+		}
+	}
 	
 	Class.EventEmitterClass = Class.extend({},{
 		init : function(){
