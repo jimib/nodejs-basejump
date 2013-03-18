@@ -7,13 +7,13 @@
   },
   "dependencies": {
     "express"		: "3.0.0rc4",
-	"connect-flash" : "latest",
+	"connect-flash" : "*",
     "jade"			: "*",
 	"chauffeur" 	: "git://github.com/jimib/nodejs-chauffeur.git#master",
 	"earlybird" 	: "git://github.com/jimib/nodejs-earlybird.git#master",
 	"extends" 		: "git://github.com/jimib/nodejs-extends.git#master",
+	"jugglingdb" 	: "git://github.com/jimib/jugglingdb.git#v0.1.27",
 	"uberclass" 	: "1.0.1",
-	"jugglingdb"	: "0.1.18",
     "mongodb" 		: "1.1.7"
   }
 }
